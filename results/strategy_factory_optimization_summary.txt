@@ -1,0 +1,73 @@
+BTCUSDT strategy optimization
+search_rows: 800
+evaluated_rows: 972
+target_monthly_return_pcent: 20.00
+
+Best discovery candidates by monthly return
+interval     seed strategy_id          template  compound_monthly_return_pcent  total_return_pcent  max_dd_pcent  profit_factor  trade_count  leverage
+     15m 20260611 btc15m_0039 donchian_breakout                       2.492948           34.349581    -45.341081       1.191312          104       2.0
+     15m 20260611 btc15m_0119 donchian_breakout                       1.436371           18.651016    -29.666225       1.102883          281       1.5
+     15m 20260611 btc15m_0097         ema_cross                       0.599441            7.429764    -28.067094       1.068381          280       1.0
+      5m 20260612  btc5m_0084     rsi_reversion                       0.418507            5.135659     -0.815283      12.985672           13       3.0
+     15m 20260611 btc15m_0191     rsi_reversion                       0.376621            4.610894     -1.831109       4.524130            6       2.0
+     15m 20260612 btc15m_0035         ema_cross                       0.194686            2.359707    -22.137495       1.033147          409       1.5
+     15m 20260611 btc15m_0008     rsi_reversion                       0.165330            2.000654     -0.276427            inf            3       2.0
+     15m 20260611 btc15m_0075         ema_cross                       0.145498            1.758745    -43.001671       1.045503          243       2.0
+     15m 20260612 btc15m_0110         ema_cross                       0.119339            1.440470    -36.139554       1.027941          439       2.0
+      5m 20260611  btc5m_0100     rsi_reversion                       0.093270            1.124217     -0.700652      50.874385            3       1.5
+      5m 20260612  btc5m_0049     rsi_reversion                       0.062315            0.749831     -0.467347      50.874385            3       1.0
+     15m 20260612 btc15m_0021     rsi_reversion                       0.059955            0.721318     -0.165000            inf            1       3.0
+
+Chosen candidate from holdout
+interval: 15m
+seed: 20260612
+strategy_id: btc15m_0094
+template: rsi_reversion
+compound_monthly_return_pcent: 1.6231
+total_return_pcent: 9.9889
+max_dd_pcent: -7.4183
+profit_factor: 1.8994
+trade_count: 22
+win_rate_pcent: 72.7273
+sharpe: 1.8830
+sortino: 0.3535
+leverage: 2.0000
+sl_pcent: 0.0080
+tp_pcent: 0.0350
+max_hold_bars: 32
+funding_filter: none
+
+Walk-forward
+wf_total_return_pcent: 2.5534
+wf_monthly_return_pcent: 0.1422
+wf_sharpe: 0.1954
+wf_sortino: 0.0311
+wf_max_dd_pcent: -8.9491
+wf_profit_factor: 1.1074
+wf_trade_count: 48
+wf_win_rate_pcent: 64.5833
+wf_profitable_folds_pcent: 44.4444
+wf_median_fold_return_pcent: -0.2569
+wf_worst_fold_return_pcent: -4.5180
+wf_best_fold_return_pcent: 4.8459
+
+Monte Carlo
+mc_runs: 10000
+mc_trades: 48
+mc_final_return_p05: -13.1793
+mc_final_return_p50: 2.5786
+mc_final_return_p95: 21.6605
+mc_probability_loss_pcent: 40.3500
+mc_max_dd_p05: -17.8425
+mc_max_dd_p50: -8.9250
+
+passed_all_gates: False
+failures:
+- holdout monthly return < 20%
+- walk-forward monthly return < 20%
+- walk-forward PF < 1.20
+- walk-forward Sharpe < 1.0
+- walk-forward Sortino < 1.5
+- profitable folds < 70%
+- walk-forward trades < 250
+- Monte Carlo 5% DD > 1.4x WF DD

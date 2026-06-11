@@ -1,0 +1,34 @@
+Manual V1.2 validation
+
+Full history
+return_pct: 50.8196
+return_ann_pct: 22.4346
+sharpe: 1.2608
+sortino: 2.4954
+max_dd_pct: -10.0888
+profit_factor: 1.7743
+trades: 103
+win_rate_pct: 85.4369
+expectancy_pct: 0.4424
+sqn: 2.1350
+
+Walk-forward
+folds: 18
+wf_total_return_pct_sum: 35.3052
+wf_median_fold_return_pct: 0.9432
+wf_best_fold_return_pct: 11.5950
+wf_worst_fold_return_pct: -7.6165
+wf_profitable_folds_pct: 72.2222
+wf_avg_monthly_return_pct: 1.9949
+wf_avg_max_dd_pct: -3.5778
+wf_total_test_trades: 83
+
+Monte Carlo
+mc_runs: 10000
+mc_trades: 83
+mc_final_return_p05: 4.6958
+mc_final_return_p50: 42.5629
+mc_final_return_p95: 87.0605
+mc_probability_loss_pct: 2.9900
+mc_max_dd_p05: -21.4232
+mc_max_dd_p50: -10.9368

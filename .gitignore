@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Local market data and large generated artifacts
+data/*.csv
+data/*.json
+data/*.parquet
+*.json
+btcusdt_*_klines*.json
+btcusdt_funding*.json
+
+# Large/ephemeral optimization outputs
+optimization_runs/
+matplotlib_cache/
+manual_bt_run/data/*.csv
+manual_bt_run/*.html
+manual_bt_run/*.tmp
+
+# Keep curated reports under results/
+!results/*.txt
+!results/*.csv
+!results/*.png
+

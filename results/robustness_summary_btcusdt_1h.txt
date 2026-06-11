@@ -1,0 +1,43 @@
+Walk-forward setup
+data_rows: 17775
+data_start: 2024-06-01T00:00:00+00:00
+data_end: 2026-06-11T14:00:00+00:00
+folds: 20
+train_days: 120.0000
+test_days: 30.0000
+profitable_folds_pcent: 45.0000
+median_fold_return_pcent: -0.5159
+worst_fold_return_pcent: -9.5197
+best_fold_return_pcent: 11.9080
+oos_closed_trades: 94
+oos_win_rate_pcent: 28.7234
+
+Out-of-sample equity metrics
+total_return_pcent: -13.4717
+annualized_return_pcent: -8.4323
+annualized_volatility_pcent: 21.0871
+sharpe_ratio: -0.3999
+max_drawdown_pcent: -37.9979
+
+Monte Carlo summary
+mc_runs: 10000
+mc_trade_sample_size: 94
+mc_final_return_p05: -44.4725
+mc_final_return_p50: -13.9875
+mc_final_return_p95: 37.8997
+mc_probability_loss_pcent: 70.1300
+mc_max_dd_p50: -30.5071
+mc_max_dd_p05: -50.0254
+
+Selected parameter counts
+ short_window  long_window  sl_pcent  tp_pcent  count
+           10          100      0.03      0.08      3
+           20          200      0.02      0.05      3
+           20           50      0.02      0.03      2
+           10           50      0.03      0.08      1
+           30          100      0.02      0.05      1
+           30           50      0.03      0.08      1
+           10          200      0.02      0.05      1
+           20          200      0.02      0.03      1
+           10           50      0.02      0.03      1
+           10           50      0.03      0.05      1
