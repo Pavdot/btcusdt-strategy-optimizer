@@ -1,0 +1,92 @@
+CPCV anti-overfitting report
+
+Settings
+csv: C:\Users\Utilisateur\Downloads\src\manual_bt_run\data\BTCUSDT_1h.csv
+rows: 17775
+start: 2024-06-01 00:00:00
+end: 2026-06-11 14:00:00
+mode: full
+n_groups: 8
+test_groups: 2
+splits: 28
+purge_bars: 1200
+embargo_bars: 336
+warmup_bars: 1200
+max_tries: 120
+random_states: [42, 1337, 2026]
+top_candidates: 30
+candidate_cpcv_mode: approx_full_backtest_for_ranking_then_strict_cpcv_for_selected_candidate
+group_ranges: [(0, 2222), (2222, 4444), (4444, 6666), (6666, 8888), (8888, 11110), (11110, 13332), (13332, 15554), (15554, 17775)]
+
+Fixed-parameter CPCV
+label: current_best
+splits: 28
+median_test_monthly_return_pct: 1.7866184048190847
+p10_test_monthly_return_pct: 0.08753297579180865
+median_test_return_pct: 11.367941864971154
+profitable_splits_pct: 92.85714285714286
+median_test_profit_factor: 1.8592748408869384
+median_test_max_dd_pct: -6.7267448814286475
+median_train_test_gap_pct: 0.0
+total_test_trades: 707
+pbo: None
+passed_gate: True
+
+Reoptimized-parameter CPCV
+label: candidate_01
+splits: 28
+median_test_monthly_return_pct: 1.7669530472935846
+p10_test_monthly_return_pct: 0.49800870943573106
+median_test_return_pct: 11.237234022496867
+profitable_splits_pct: 100.0
+median_test_profit_factor: 1.709078286292804
+median_test_max_dd_pct: -6.540475380589794
+median_train_test_gap_pct: 0.0
+total_test_trades: 707
+pbo: 0.35714285714285715
+passed_gate: False
+robust_score: 16.80776715805957
+
+Best reoptimized params
+{
+  "atr_period": 14,
+  "breakout_lookback": 20,
+  "ema_fast_period": 250,
+  "ema_slope_lookback": 20,
+  "ema_slow_period": 600,
+  "max_close_position_short": 0.45,
+  "max_rsi_percentile_short": 0.65,
+  "min_body_ratio": 0.8,
+  "min_break_dist_atr": 0.03,
+  "min_close_position_long": 0.55,
+  "min_node_percentile": 0.65,
+  "min_room_to_target_atr": 1.25,
+  "min_rsi_percentile_long": 0.45,
+  "min_vol_ratio": 0.8,
+  "rsi_period": 14,
+  "rsi_rank_lookback": 50,
+  "stop_atr_buffer": 0.3,
+  "tp_fraction_to_next_level": 1.0,
+  "vp_bins": 24,
+  "vp_macro_lookback": 750,
+  "vp_tactical_lookback": 336
+}
+
+Reoptimized walk-forward and Monte Carlo
+wf_folds: 18
+wf_total_return_pct_sum: 22.363854491154434
+wf_median_fold_return_pct: 0.9244752959098879
+wf_best_fold_return_pct: 11.342227422695839
+wf_worst_fold_return_pct: -6.481179352551791
+wf_profitable_folds_pct: 61.111111111111114
+wf_avg_monthly_return_pct: 1.2641069528779174
+wf_avg_max_dd_pct: -3.612437540188595
+wf_total_test_trades: 76
+mc_runs: 10000
+mc_trades: 76
+mc_final_return_p05: -3.7785501631120826
+mc_final_return_p50: 31.552474745048073
+mc_final_return_p95: 73.48635651959597
+mc_probability_loss_pct: 7.380000000000001
+mc_max_dd_p05: -23.211823559652466
+mc_max_dd_p50: -11.811857921601371

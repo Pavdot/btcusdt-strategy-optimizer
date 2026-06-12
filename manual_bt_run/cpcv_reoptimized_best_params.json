@@ -1,0 +1,23 @@
+{
+  "atr_period": 14,
+  "breakout_lookback": 20,
+  "ema_fast_period": 250,
+  "ema_slope_lookback": 20,
+  "ema_slow_period": 600,
+  "max_close_position_short": 0.45,
+  "max_rsi_percentile_short": 0.65,
+  "min_body_ratio": 0.8,
+  "min_break_dist_atr": 0.03,
+  "min_close_position_long": 0.55,
+  "min_node_percentile": 0.65,
+  "min_room_to_target_atr": 1.25,
+  "min_rsi_percentile_long": 0.45,
+  "min_vol_ratio": 0.8,
+  "rsi_period": 14,
+  "rsi_rank_lookback": 50,
+  "stop_atr_buffer": 0.3,
+  "tp_fraction_to_next_level": 1.0,
+  "vp_bins": 24,
+  "vp_macro_lookback": 750,
+  "vp_tactical_lookback": 336
+}

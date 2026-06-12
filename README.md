@@ -43,6 +43,20 @@ cd manual_bt_run
 python validate_best_manual.py
 ```
 
+## Run CPCV anti-overfitting checks
+
+```bash
+python manual_bt_run/cpcv_validate_manual.py --mode fixed --csv manual_bt_run/data/BTCUSDT_1h.csv
+```
+
+Full conditional pipeline:
+
+```bash
+python manual_bt_run/cpcv_validate_manual.py --mode full --max-tries 120 --random-states 42 1337 2026
+```
+
+The `full` mode first validates the current best parameters with combinatorial purged cross-validation. It only launches the robust re-optimization pass when the fixed-parameter CPCV gate passes.
+
 ## Latest validation snapshot
 
 Best manual V1.2 candidate on BTCUSDT 1h:
@@ -58,5 +72,18 @@ Best manual V1.2 candidate on BTCUSDT 1h:
 - Walk-forward average monthly return per fold: `1.99%`
 - Monte Carlo probability of loss: `2.99%`
 
-This is a research artifact, not financial advice and not a live-trading recommendation.
+## Latest CPCV snapshot
 
+Strict CPCV settings: `8` chronological groups, `2` test groups per split, `28` splits, `1200` purged bars, `336` embargo bars.
+
+- Current parameters CPCV median monthly return: `+1.79%`
+- Current parameters profitable CPCV splits: `92.86%`
+- Current parameters median CPCV profit factor: `1.86`
+- Current parameters CPCV gate: `PASS`
+- Re-optimized candidate CPCV median monthly return: `+1.77%`
+- Re-optimized candidate PBO approximation: `0.357`
+- Re-optimized candidate CPCV gate: `FAIL` because PBO is above the strict `<0.20` threshold
+- Re-optimized walk-forward average monthly return: `+1.26%`
+- Re-optimized Monte Carlo probability of loss: `7.38%`
+
+This is a research artifact, not financial advice and not a live-trading recommendation.

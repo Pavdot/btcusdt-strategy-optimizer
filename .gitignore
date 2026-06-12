@@ -10,6 +10,7 @@ data/*.csv
 data/*.json
 data/*.parquet
 *.json
+!manual_bt_run/cpcv_reoptimized_best_params.json
 btcusdt_*_klines*.json
 btcusdt_funding*.json
 
@@ -24,4 +25,3 @@ manual_bt_run/*.tmp
 !results/*.txt
 !results/*.csv
 !results/*.png
-

@@ -1,0 +1,2 @@
+label,splits,median_test_monthly_return_pct,p10_test_monthly_return_pct,median_test_return_pct,profitable_splits_pct,median_test_profit_factor,median_test_max_dd_pct,median_train_test_gap_pct,total_test_trades,pbo,passed_gate
+current_best,28,1.7866184048190847,0.08753297579180865,11.367941864971154,92.85714285714286,1.8592748408869384,-6.7267448814286475,0.0,707,,True
